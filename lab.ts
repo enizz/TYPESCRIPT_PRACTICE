@@ -81,13 +81,10 @@ let inventory: InventoryItem[] = [iiOne, iiTwo, iiThree]
 function calcInventoryValue(inventory: InventoryItem[]): number{
     let totalValue = 0;
     inventory.forEach(x => {
-        let a = x.product.price
-        let b = x.quantity
-        let c = a*b;
-        console.log(a)
-        console.log(b)
+        totalValue += (x.product.price * x.quantity)
     })
-    return 1;
+    return totalValue;
 }
 
-calcInventoryValue(inventory)
+let z = calcInventoryValue(inventory)
+console.log(z)
