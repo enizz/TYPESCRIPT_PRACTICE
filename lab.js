@@ -38,7 +38,7 @@ var products = [productOne, productTwo, productThree];
 function calcAverageProductPrice(products) {
     var avg = 0;
     products.forEach(function (x) {
-        avg = avg + x.price;
+        avg += x.price;
     });
     avg = avg / products.length;
     return avg;
@@ -58,11 +58,16 @@ var iiThree = {
     quantity: 20.0
 };
 var inventory = [iiOne, iiTwo, iiThree];
-function calcInventoryValue(InventoryItem) {
+function calcInventoryValue(inventory) {
     var totalValue = 0;
-    InventoryItem.forEach(function (x) {
-        totalValue += x.quantity;
+    inventory.forEach(function (x) {
+        var a = x.product.price;
+        var b = x.quantity;
+        var c = a * b;
+        console.log(a);
+        console.log(b);
     });
     return 1;
 }
+calcInventoryValue(inventory);
 //# sourceMappingURL=lab.js.map

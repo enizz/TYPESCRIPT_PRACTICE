@@ -52,7 +52,7 @@ let products: Product[] = [productOne, productTwo, productThree]
 function calcAverageProductPrice(products: Product[]): number{
     let avg = 0;
     products.forEach(x => {
-        avg = avg + x.price
+        avg += x.price
     })
     avg = avg / products.length;
     return avg;
@@ -78,12 +78,16 @@ let iiThree = {
 }
 
 let inventory: InventoryItem[] = [iiOne, iiTwo, iiThree]
-function calcInventoryValue(InventoryItem: InventoryItem[]): number{
+function calcInventoryValue(inventory: InventoryItem[]): number{
     let totalValue = 0;
-    InventoryItem.forEach(x => {
-        totalValue += x.quantity
+    inventory.forEach(x => {
+        let a = x.product.price
+        let b = x.quantity
+        let c = a*b;
+        console.log(a)
+        console.log(b)
     })
-    
-    
     return 1;
 }
+
+calcInventoryValue(inventory)
